@@ -6,12 +6,13 @@ export default function ResortCard({
   rating,
   price,
 }: ResortListing) {
+  const ratingClass = rating > 4.0 ? "rating-green" : "rating-red";
   return (
     <div className="ResortCard">
       <img src={pic} alt="" width="100px" />
       <h2>{country}</h2>
       <p>{location}</p>
-      <p>{rating}★</p>
+      <p className={`Rating ${ratingClass}`}>{rating}★</p>
       <p>${price}/night</p>
     </div>
   );
